@@ -1,61 +1,45 @@
 package study;
 
-import java.util.Scanner;
-import java.util.regex.Pattern;
+import java.util.LinkedList;
 
 public class Calculator {
 
-	int answer;
-	String operator;
-	Scanner scanner = new Scanner(System.in);
+	String[] values;
+	int result;
 
-	public Calculator() {
-		Start();
-	}
+	LinkedList<Double> operands;
+	LinkedList<String> operators;
 
-	public void Start() {
-		System.out.println("연산식 입력 : ");
+	public void split(String param) {
+		values = param.split(" ");
 
-		String formula = scanner.nextLine();
-		String[] values = split(formula);
-
-		answer = Integer.parseInt(values[0]);
-
-		for (int i = 1; i < values.length; i++) {
-			if (isOperator(values[i])) {
-				operator = values[i];
-			} else {
-				operating(values[i]);
-			}
-
+		if (values.length < 3) {
+			throw new IllegalArgumentException("입력값이 올바르지 않습니다");
 		}
 
-		System.out.println(answer);
-	}
-
-	private void operating(String value) {
-		int number = Integer.parseInt(value);
-
-		if (operator.equals("+")) {
-			answer += number;
-		} else if (operator.equals("-")) {
-			answer -= number;
-		} else if (operator.equals("/")) {
-			answer /= number;
-		} else if (operator.equals("*")) {
-			answer *= number;
+		for (int i = 0; i < values.length; i++) {
+			validate(i, values[i]);
+			add(values[i]);
 		}
 	}
 
-	private boolean isOperator(String value) {
-		return Pattern.matches("[+-/*]", value);
+	private void validate(int idx, String param) {
+		if (idx % 2 == 1 && isNumeric(param)) {
+			throw new IllegalArgumentException("입력값이 올바르지 않습니다");
+		} else if (idx % 2 == 0 && !isNumeric(param)) {
+			throw new IllegalArgumentException("입력값이 올바르지 않습니다");
+		}
 	}
 
-	public String[] split(String formula) {
-		return formula.split(" ");
+	private boolean isNumeric(String param) {
+		return param.matches("[0-9]");
 	}
 
-	public static void main(String[] args) {
-		Calculator cal = new Calculator();
+	private void add(String param) {
+		if (isNumeric(param)) {
+			operands.add(Double.parseDouble(param));
+		} else {
+			operators.add(param);
+		}
 	}
 }
