@@ -27,4 +27,9 @@ public class BaseballGame {
 			this.answer.add(ball);
 		}
 	}
+
+	public void count(String input) {
+		// TODO Auto-generated method stub
+
+	}
 }
