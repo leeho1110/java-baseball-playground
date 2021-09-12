@@ -31,6 +31,13 @@ class BaseballGameTest {
 	void answer_is_diffrent_each_other() {
 		assertEquals(baseballGame.answer.size(),
 			baseballGame.answer.stream().distinct().collect(Collectors.toList()).size());
+	@ParameterizedTest
+	@ValueSource(strings = {"24", "1ㅁ2", "7a26", "asd", "   "})
+	void validate_users_input_false(String input) {
+		assertThatThrownBy(() -> {
+			baseballGame.validate(input);
+		}).isInstanceOf(IllegalArgumentException.class)
+			.hasMessage("입력값이 올바르지 않습니다");
 	}
 
 }

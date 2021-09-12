@@ -6,15 +6,15 @@ import java.util.Random;
 
 public class BaseballGame {
 
-	public List<Integer> answer;
+	private List<Integer> answer;
+	private int strike;
+	private int ball;
+
 
 	public BaseballGame() {
-		answer = new ArrayList<Integer>();
-		setAnswer();
-	}
+		this.answer = new ArrayList<Integer>();
 
-	private void setAnswer() {
-		while (answer.size() < 3) {
+		while (getAnswer().size() < 3) {
 			addBalls();
 		}
 	}
