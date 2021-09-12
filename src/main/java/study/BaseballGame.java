@@ -23,8 +23,10 @@ public class BaseballGame {
 		Random random = new Random();
 		int ball = random.nextInt(9) + 1;
 
-		if (!answer.contains(ball)) {
-			this.answer.add(ball);
+		if (!getAnswer().contains(ball)) {
+			this.getAnswer().add(ball);
+		}
+	}
 		}
 	}
 
