@@ -1,4 +1,4 @@
-package study.calculator;
+package study;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,10 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-<<<<<<< Updated upstream:src/test/java/study/CalculatorBasicTest.java
-=======
-import study.calculator.CalculatorBasic;
->>>>>>> Stashed changes:src/test/java/study/calculator/CalculatorBasicTest.java
 
 class CalculatorBasicTest {
 
