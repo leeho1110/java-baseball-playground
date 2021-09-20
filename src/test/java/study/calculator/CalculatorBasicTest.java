@@ -9,6 +9,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import study.calculator.CalculatorBasic;
 
+import study.calculator.CalculatorBasic;
+
 class CalculatorBasicTest {
 
 	CalculatorBasic cal;
