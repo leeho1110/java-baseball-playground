@@ -1,4 +1,4 @@
-package study.Calculator;
+package study.calculator;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;

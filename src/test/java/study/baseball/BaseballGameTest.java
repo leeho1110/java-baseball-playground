@@ -1,8 +1,6 @@
-package study;
+package study.baseball;
 
 import org.junit.jupiter.api.Test;
-import study.Baseball.Ball;
-import study.Baseball.BallStatus;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

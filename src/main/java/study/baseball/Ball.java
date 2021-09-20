@@ -1,4 +1,4 @@
-package study.Baseball;
+package study.baseball;
 
 public class Ball {
     private final int position;
