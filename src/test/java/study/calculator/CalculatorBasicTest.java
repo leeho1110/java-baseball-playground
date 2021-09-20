@@ -1,4 +1,4 @@
-package study;
+package study.calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import study.calculator.CalculatorBasic;
 
 class CalculatorBasicTest {
 
