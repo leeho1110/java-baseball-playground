@@ -19,10 +19,22 @@ public class Balls {
 		return answers;
 	}
 
+	public PlayResult judgeBall(List<Integer> balls) {
+		Balls userBall = new Balls(balls);
+		PlayResult result = new PlayResult();
+
+		for(Ball ball : answers){
+			BallStatus status = userBall.judgeBall(ball);
+			result.report(status);
+		}
+
+		return result;
+	}
+
 	public BallStatus judgeBall(Ball userball) {
 		return this.answers.stream()
 			.map(ball -> ball.judgeBall(userball))
-			.filter(status -> status != BallStatus.NOTHING)
+			.filter(status -> status.isNotNothing())
 			.findFirst()
 			.orElse(BallStatus.NOTHING);
 	}
