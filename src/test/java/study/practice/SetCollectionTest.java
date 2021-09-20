@@ -1,4 +1,4 @@
-package study;
+package study.practice;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
